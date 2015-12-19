@@ -42,7 +42,7 @@
                 android:drawableRight="@drawable/add"
                 android:layout_weight="1"
                 android:drawablePadding="8dp"
-                android:onClick="buyoutube"
+                android:onClick="buAddTool"
                 android:textSize="12dp"
                 android:textColor="@color/darkblue"
                 android:textAlignment="textStart"

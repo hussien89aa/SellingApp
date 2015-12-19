@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import java.security.PublicKey;
+
 /**
  * Created by hussienalrubaye on 12/17/15.
  */
@@ -13,6 +15,7 @@ public class SaveSettings {
     SharedPreferences sharedpreferences;
     public static final String MyPREFERENCES = "MyPrefs3" ;
     public static   String UserID = "0";
+    public static String ServerURL="http://selling.alruabye.net/";
     public  SaveSettings(Context context) {
         this.context=context;
         sharedpreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);

@@ -2,9 +2,11 @@ package com.selling.hussienalrubaye.androidselling;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.SearchView;
 
 public class ControlPanel extends AppCompatActivity {
@@ -46,4 +48,8 @@ public class ControlPanel extends AppCompatActivity {
         return true;
     }
 
+    public void buAddTool(View view) {
+        Intent intent=new Intent(this,AddTool.class);
+        startActivity(intent);
+    }
 }

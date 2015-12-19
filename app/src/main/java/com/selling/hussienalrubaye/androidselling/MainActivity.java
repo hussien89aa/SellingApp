@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void busaveaccount(View view) {
-        Location myLocation=new Location("phone"); //  getlocation();
+        Location myLocation= getlocation();//new Location("phone"); //
         myLocation.setLatitude(20.3);
         myLocation.setLongitude(52.6);
 
