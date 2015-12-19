@@ -12,17 +12,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidquery.AQuery;
+import com.androidquery.callback.AjaxStatus;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
@@ -45,8 +56,12 @@ public class AddTool extends AppCompatActivity {
     String TempToolID;
     GridView ls;
     MyCustomAdapter myadapter;
-
+    Spinner spinner ;
+    AQuery aq;
     ArrayList<AddToolItem> fullsongpath =new ArrayList<AddToolItem>();
+    ArrayList< ToolType> ToolType = new ArrayList<ToolType>();
+    int RESULT_LOAD_IMAGE=1;
+    public Bitmap bitmap; // the selected image from gellary
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,11 +77,65 @@ public class AddTool extends AppCompatActivity {
        ls=(GridView) findViewById(R.id.gridView);
         myadapter=new MyCustomAdapter(fullsongpath);
         ls.setAdapter( myadapter);
+        aq=new AQuery(this);
+        spinner = (Spinner) findViewById(R.id.spinner);
+
+
+// Array of choices
+
+
+
+
+        String url = SaveSettings.ServerURL +"UsersWS.asmx"+"/GetToolType";
+        aq.ajax(url, JSONObject.class, this, "jsonCallbackGetToolType");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.add_tool_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if (id == R.id.gbackmenu) {
+
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void jsonCallbackGetToolType(String url, JSONObject json, AjaxStatus status) throws JSONException {
+
+        if(json != null){
+            //successful ajax call
+            //successful ajax call
+
+             JSONArray ToolData=json.getJSONArray("ToolData");
+            String[] ToolTypeArray = new String[ToolData.length()];
+            for (int i = 0; i <ToolData.length() ; i++) {
+                JSONObject jsToolData=ToolData.getJSONObject(i);
+               // JSONObject ToolTypeID=ToolData.getJSONObject(i);
+                ToolType.add(new ToolType(jsToolData.getString("ToolTypeName") ,jsToolData.getInt("ToolTypeID")));
+                ToolTypeArray[i]=jsToolData.getString("ToolTypeName");
+            }
+//intilize spanner
+            //add spanner
+
+            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, ToolTypeArray);
+            spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+            spinner.setAdapter(spinnerArrayAdapter);
+        }else{
+            //ajax error
+        }
+
     }
 
 
-    int RESULT_LOAD_IMAGE=1;
-   public Bitmap bitmap; // the selected image from gellary
 
 
     // when select image from gellary it will loaded here
@@ -112,7 +181,33 @@ public class AddTool extends AppCompatActivity {
         }
     }
 
-// send image to the webservice
+    public void buAddTool(View view) {
+       // Toast.makeText(getApplicationContext(),String.valueOf(spinner.getSelectedItemPosition()),Toast.LENGTH_LONG).show();
+        EditText ToolName=(EditText)findViewById(R.id.EDTToolName);
+        EditText ToolDes=(EditText)findViewById(R.id.EDToolDes);
+        EditText  ToolPrice=(EditText)findViewById(R.id.EDTToolPrice);
+         String url = SaveSettings.ServerURL +"UsersWS.asmx"+"/AddTools?UserID="+ SaveSettings.UserID+" &ToolName="+ToolName.getText()+"&ToolDes="+ ToolDes.getText()+"&ToolPrice="+ToolPrice.getText()+"&ToolTypeID="+String.valueOf(ToolType.get(spinner.getSelectedItemPosition()).ToolTypeID) +"&TempToolID=" + String.valueOf(TempToolID);
+
+        aq.ajax(url, JSONObject.class, this, "jsonCallback");
+
+    }
+    public void jsonCallback(String url, JSONObject json, AjaxStatus status) throws JSONException {
+
+        if(json != null){
+            //successful ajax call
+            //successful ajax call
+            String msg=json.getString("Message");
+            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+            int IsAdded=json.getInt("IsAdded");
+            if(IsAdded!=0){ // mean the tool is added go to manage tool later
+
+            }
+        }else{
+            //ajax error
+        }
+
+    }
+    // send image to the webservice
     public class MyAsyncGetNewNews extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
@@ -161,9 +256,10 @@ public class AddTool extends AppCompatActivity {
             if(index<0)
                 index=0;
             fullsongpath.remove(index);
-            fullsongpath.add(index, new AddToolItem("NewImage", R.drawable.loadimage,null));
+            fullsongpath.add(index, new AddToolItem("NewImage", R.drawable.loadimage, null));
             fullsongpath.add(index, new AddToolItem("path", R.drawable.hu,  bitmap ));
             myadapter.notifyDataSetChanged();
+            ls.smoothScrollToPosition( fullsongpath.size()-1);
         }
 
 

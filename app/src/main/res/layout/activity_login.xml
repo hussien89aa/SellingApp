@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     android:background="@color/whitebackground"
     tools:context="com.selling.hussienalrubaye.androidselling.Login">
     <ScrollView
@@ -14,7 +15,10 @@
 
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:paddingTop="30dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -25,41 +29,12 @@
                 android:paddingLeft="4dp"
                 android:paddingTop="4dp">
 
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Login Users"
-                    android:id="@+id/textView8"
-                    android:layout_weight="2"
-                    android:textColor="@color/customeblue"
-                    android:paddingBottom="20dp"
-                    android:textSize="30dp"
-                    android:textAlignment="center"
-                    android:paddingRight="4dp"
-                    android:paddingTop="8dp"
-                    android:paddingLeft="8dp"
-                    android:textStyle="bold" />
-
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:touchscreenBlocksFocus="false"
                     android:layout_marginBottom="2dp">
-
-                    <TextView
-                        android:gravity="left"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="User Name:"
-                        android:id="@+id/txtfullname"
-                        android:layout_weight="2"
-                        android:textColor="@color/black"
-                        android:paddingBottom="4dp"
-                        android:textStyle="bold" />
 
                     <EditText
                         android:layout_width="fill_parent"
@@ -71,7 +46,7 @@
                         android:textColor="#ff1a102c"
                         android:background="@android:drawable/editbox_background"
                         android:textSize="18dp"
-                        android:hint="Enter User Name"
+                        android:hint="@string/UserName"
                         android:paddingBottom="9dp"
                         android:paddingTop="9dp"
                         android:layout_marginBottom="10dp"/>
@@ -86,28 +61,17 @@
                     android:touchscreenBlocksFocus="false"
                     android:layout_marginBottom="2dp">
 
-                    <TextView
-                        android:gravity="left"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Password:"
-                        android:id="@+id/txtpassword"
-                        android:layout_weight="2"
-                        android:textColor="@color/black"
-                        android:paddingBottom="4dp"
-                        android:textStyle="bold" />
-
                     <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:gravity="right"
                         android:id="@+id/EDTpassword"
                         android:layout_weight="1"
                         android:textColor="#ff1a102c"
                         android:background="@android:drawable/editbox_background"
                         android:textSize="18dp"
-                        android:hint="Enter Password"
+                        android:hint="@string/AddPassword"
                         android:paddingBottom="9dp"
                         android:paddingTop="9dp"
                         android:layout_marginBottom="10dp"
@@ -119,14 +83,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layoutDirection="ltr"
-                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login"
+                    android:text="@string/Login"
                     android:id="@+id/bulogin"
                     android:background="@drawable/buttonblue"
 
@@ -139,7 +103,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Register"
+                    android:text="@string/NewUser"
                     android:id="@+id/BuSaveSetting"
                     android:background="@drawable/buttonblue"
 

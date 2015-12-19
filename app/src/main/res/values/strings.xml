@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name">ابيع اغراضي</string>
     <string name="title_activity_main2">Main2Activity</string>
@@ -5,4 +6,24 @@
     <string name="search">search</string>
     <string name="home">الرئيسية</string>
     <string name="mytool">ادواتي</string>
+
+
+    <string name="ToolNameHint">اكتب اسم الاداة</string>
+
+    <string name="ToolPriceHint">ادخل السعر</string>
+
+    <string name="ToolDescHint">اوصف الاداة</string>
+    <string name="ToolType">التصنيف :</string>
+    <string name="AddTool">اضافة</string>
+    <string name="AddImages">اضف صور</string>
+    <string name="UserName">ادخل اسم مستخدم</string>
+    <string name="AddPassword">ادخل كلمة المرور</string>
+    <string name="Login">تسجيل دخول</string>
+    <string name="NewUser">مستخدم جديد</string>
+    <string name="Email">ادخل بريدك الالكتروني</string>
+    <string name="PhoneNumber">ادخل رقم الهاتف</string>
+    <string name="back">رجوع</string>
+    <string name="AddForsell">اضافة ادوات للبيع</string>
+    <string name="AddNewUser"> اضافة مستخدم جديد</string>
+<string name="OffersNews">اخر العروض</string>
 </resources>

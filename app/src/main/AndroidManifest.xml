@@ -14,16 +14,22 @@
         android:label="@string/app_name"
          android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Login"></activity>
-        <activity android:name=".ControlPanel">
+        <activity   android:label="@string/AddNewUser"
+            android:name=".MainActivity"></activity>
+        <activity   android:label="@string/Login"
+            android:name=".Login">
+
+        </activity>
+        <activity   android:label="@string/OffersNews"
+            android:name=".ControlPanel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddTool"></activity>
+        <activity   android:label="@string/AddForsell"
+            android:name=".AddTool"></activity>
     </application>
 
 </manifest>
