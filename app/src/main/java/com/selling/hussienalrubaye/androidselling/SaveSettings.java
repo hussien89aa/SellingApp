@@ -16,6 +16,7 @@ public class SaveSettings {
     public static final String MyPREFERENCES = "MyPrefs3" ;
     public static   String UserID = "0";
     public static String ServerURL="http://selling.alruabye.net/";
+    public static   int  Distance;
     public  SaveSettings(Context context) {
         this.context=context;
         sharedpreferences = context.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -29,6 +30,7 @@ public class SaveSettings {
 
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putString("UserID",String.valueOf(UserID));
+            editor.putInt("Distance", Distance);
             editor.commit();
             LoadData( );
         }
@@ -38,6 +40,7 @@ public class SaveSettings {
     public   void LoadData( ) {
 
         String TempUserID=sharedpreferences.getString("UserID","empty");
+       Distance=sharedpreferences.getInt("Distance",500000); // add defaul distance
         if(!TempUserID.equals("empty"))
             UserID=TempUserID;// load user name
         else {

@@ -26,4 +26,6 @@
     <string name="AddForsell">اضافة ادوات للبيع</string>
     <string name="AddNewUser"> اضافة مستخدم جديد</string>
 <string name="OffersNews">اخر العروض</string>
+    <string name="no_search_result">لايوجد نتائج بحث</string>
+    <string name="nonetworkConnection">لايوجد اتصال بالانترنت</string>
 </resources>
