@@ -1,12 +1,8 @@
 package com.selling.hussienalrubaye.androidselling;
 
-import android.app.Activity;
-
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -21,7 +17,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 
 import org.json.JSONArray;
@@ -35,7 +30,7 @@ AQuery aq;
     private GoogleMap mMap;
     // Add a marker in Sydney and move the camera
     LatLng OwnerLocation ; //location of the tool owner
-    ArrayList<String> fullsongpath =new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,8 +76,10 @@ AQuery aq;
             txt_Email.setText( getResources().getString(R.string.Emailu) + " "+newData.getString("Email") );
             TextView txt_PhoneNumber = (TextView) findViewById(R.id.txt_PhoneNumber);
             txt_PhoneNumber.setText(getResources().getString(R.string.PhoneNumberu) + " "+ newData.getString("PhoneNumber"));
+
+            ArrayList<String> OfferImages =new ArrayList<String>(); //
             for (int i = 0; i <PictureLinkar.length() ; i++) {
-                fullsongpath.add(PictureLinkar.getString(i).toString() );
+                OfferImages.add(PictureLinkar.getString(i).toString());
             }
             OwnerLocation = new LatLng(Double.parseDouble( newData.getString("Latitle")),Double.parseDouble(newData.getString("Logtit")));
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -91,7 +88,7 @@ AQuery aq;
             //load images
             ListView  ls=(ListView) findViewById(R.id.LVImages);
 
-            ls.setAdapter( new MyCustomAdapter(fullsongpath));
+            ls.setAdapter( new MyCustomAdapter(OfferImages));
 
         }else{
             //ajax error
@@ -100,39 +97,22 @@ AQuery aq;
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.add_tool_menu, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if (id == R.id.gbackmenu) {
-
-            this.finish();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     // add loading images into grid view
     private class MyCustomAdapter extends BaseAdapter {
 
-        public  ArrayList<String>  listnewsDataAdpater ;
+        public  ArrayList<String> ImagesPAthAdp;
 
         public MyCustomAdapter(ArrayList<String>  listnewsDataAdpater) {
-            this.listnewsDataAdpater=listnewsDataAdpater;
+            this.ImagesPAthAdp =listnewsDataAdpater;
         }
 
 
 
         @Override
         public int getCount() {
-            return listnewsDataAdpater.size();
+            return ImagesPAthAdp.size();
         }
 
         @Override
@@ -149,7 +129,7 @@ AQuery aq;
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater mInflater = getLayoutInflater();
 
-            final   String imagepath = listnewsDataAdpater.get(position);
+            final   String imagepath = ImagesPAthAdp.get(position);
 
                 final View myView = mInflater.inflate(R.layout.tool_image, null);
 
