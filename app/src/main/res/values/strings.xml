@@ -1,4 +1,3 @@
-
 <resources>
     <string name="app_name">ابيع اغراضي</string>
     <string name="title_activity_main2">Main2Activity</string>
@@ -25,7 +24,11 @@
     <string name="back">رجوع</string>
     <string name="AddForsell">اضافة ادوات للبيع</string>
     <string name="AddNewUser"> اضافة مستخدم جديد</string>
-<string name="OffersNews">اخر العروض</string>
+    <string name="OffersNews">اخر العروض</string>
     <string name="no_search_result">لايوجد نتائج بحث</string>
     <string name="nonetworkConnection">لايوجد اتصال بالانترنت</string>
+    <string name="Emailu"> بريد الالكتروني</string>
+    <string name="PhoneNumberu"> رقم الهاتف</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyC-GwnV_JLxYcz2hfbXlqE02naOYr5qNSg</string>
+
 </resources>

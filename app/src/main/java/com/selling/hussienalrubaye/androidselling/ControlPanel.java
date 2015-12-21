@@ -377,6 +377,7 @@ public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
                         @Override
                         public void onClick(View v) {
                             //* call for details
+                            callDetailsView(s.ToolID);
                         }
                     });
                 //txt_channel_name.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
@@ -419,6 +420,7 @@ public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
                                             fingerState = FINGER_RELEASED;
 
                                            //* call for details
+                                            callDetailsView(s.ToolID);
 
                                         } else if (fingerState == FINGER_DRAGGING)
                                             fingerState = FINGER_RELEASED;
@@ -451,5 +453,13 @@ public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
 
             }
         }
+    }
+
+    private  void callDetailsView(String ToolID ){
+        Intent myintents = new Intent(getApplicationContext(), ToolDescription.class);
+
+        myintents.putExtra("ToolID", ToolID);
+        startActivity(myintents);
+
     }
 }
