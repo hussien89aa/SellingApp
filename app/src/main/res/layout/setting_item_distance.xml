@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="9dp"
+    android:paddingBottom="9dp">
+
+
+    <ImageView
+        android:background="@color/white"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/imgchannel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/add1"
+        android:layout_marginLeft="7dp" />
+
+    <TextView
+
+
+        android:gravity="right"
+        android:background="@color/white"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="item name"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:paddingTop="3dp"
+        android:paddingRight="7dp"
+        android:layout_alignBottom="@+id/imgchannel"
+        android:layout_toLeftOf="@+id/imgchannel"
+        android:layout_toRightOf="@+id/switch1"
+        android:layout_toEndOf="@+id/switch1"
+        android:layout_weight="0"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="2dp">
+
+        <SeekBar
+
+            android:background="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SBDistance"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="0" />
+
+        <TextView
+            android:background="@color/white"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="500K"
+            android:id="@+id/txtdisplaydis" />
+    </LinearLayout>
+
+
+</LinearLayout>

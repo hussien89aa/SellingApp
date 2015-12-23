@@ -25,9 +25,14 @@ public class Login extends AppCompatActivity {
     public void buloginckic(View view) {
         EditText UserName=(EditText)findViewById(R.id.EDTUserName);
         EditText Password=(EditText)findViewById(R.id.EDTpassword);
+        if((UserName.getText().length()<2 )||(Password.getText().length()<2 ) ) {
 
+            Operations.DisplayMessage(this, getResources().getString(R.string.AddAllinfo));
 
-        String url="http://selling.alruabye.net/UsersWS.asmx/Login?UserName="+ UserName.getText().toString() +"&Password="+ Password.getText().toString();
+            return;
+        }
+
+        String url=SaveSettings.ServerURL +"UsersWS.asmx/Login?UserName="+ UserName.getText().toString() +"&Password="+ Password.getText().toString();
         aq.ajax(url, JSONObject.class, this, "jsonCallback");
     }
 

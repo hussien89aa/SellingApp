@@ -8,30 +8,25 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
-
-
-
-
-
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bestoffer"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/AddNewUser" />
         <activity
             android:name=".Login"
-            android:label="@string/Login"></activity>
+            android:label="@string/Login" />
         <activity
             android:name=".ControlPanel"
-            android:label="@string/OffersNews">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +36,14 @@
         <activity
             android:name=".AddTool"
             android:label="@string/AddForsell" />
-        <activity android:name=".ToolDescription"></activity>
+        <activity
+            android:name=".ToolDescription"
+            android:label="@string/offerdetails" />
+        <activity
+            android:name=".MyTool"
+            android:label="@string/mytool" />
+        <activity android:name=".SettingAPP"  />
+        <activity android:name=".Categories"  android:label="@string/Catgeory"></activity>
     </application>
 
 </manifest>

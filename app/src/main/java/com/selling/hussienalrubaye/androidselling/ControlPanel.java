@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,21 +23,29 @@ import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.androidquery.AQuery;
+import com.androidquery.callback.AjaxStatus;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ControlPanel extends AppCompatActivity {
-    ListView lsNews;
+    public static ArrayList< ToolType> ToolType = new ArrayList<ToolType>();//llist tol type
+    AQuery aq;
+
     public static ArrayList<ToolTicketItem> listnewsData = new ArrayList<ToolTicketItem>();// news data
     ArrayList<ToolTicketItem>    listnewsDataTemp = new ArrayList<ToolTicketItem>();//temp news data
     MyCustomAdapter myadapter;// news adapter
+    ListView lsNews;
     int totalItemCountVisible=0; //totalItems visible
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,16 +119,50 @@ break;
         });
 
 
+        aq = new AQuery(this);
+        //get tool type
+        ToolType.clear();
+        String url = SaveSettings.ServerURL +"UsersWS.asmx"+"/GetToolType?lng="+ Locale.getDefault().getLanguage().toString() ;
+        aq.ajax(url, JSONObject.class, this, "jsonCallbackGetToolType");
+    }
+
+    public void jsonCallbackGetToolType(String url, JSONObject json, AjaxStatus status) throws JSONException {
+
+        if(json != null){
+            //successful ajax call
+            //successful ajax call
+
+            JSONArray ToolData=json.getJSONArray("ToolData");
+            for (int i = 0; i <ToolData.length() ; i++) {
+                JSONObject jsToolData=ToolData.getJSONObject(i);
+                // JSONObject ToolTypeID=ToolData.getJSONObject(i);
+                ToolType.add(new ToolType(jsToolData.getString("ToolTypeName") ,jsToolData.getInt("ToolTypeID")));
+            }
+//intilize spanner
+            //add spanner
+
+
+        }else{
+            //ajax error
+        }
 
     }
+
 
     @Override
     protected void onResume() {
 
-        if(listnewsData.size()==0)//firt time
-        //initail first call
-        loadUrl("@", 0, 0, 1, 20);
+        if(listnewsData.size()==0)//first time
 
+        try { // if it is sub cateory call
+            Bundle b = getIntent().getExtras(); // load the notifications
+            int ToolTypeID = b.getInt("ToolTypeID");
+            loadUrl("@", ToolTypeID, 0, 1, 20);
+        }
+        catch (Exception ex){
+            //initail first call
+            loadUrl("@", 0, 0, 1, 20);
+        }
         super.onResume();
     }
     SearchView searchView;
@@ -151,7 +194,19 @@ break;
 
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        int id = item.getItemId();
+        if (id == R.id.menu) {
+
+            Intent myintents = new Intent(getApplicationContext(), SettingAPP.class);
+
+            startActivity(myintents);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     public void buAddTool(View view) {
         Intent intent=new Intent(this,AddTool.class);
         startActivity(intent);
@@ -214,8 +269,8 @@ private  void  loadUrl(String q,int ToolTypeID,int ToolID,int StratFrom,int EndT
     OldNewsStatus.q=q;
     //clear list if he search from first
     if((StratFrom==1) ) //intail loading
-    {
-        if(listnewsData.size()==0)
+    { listnewsData.clear();
+        //if(listnewsData.size()==0)
             listnewsData.add(0, new ToolTicketItem(null,null,null,null, "ticket_first_item",null ));
         listnewsData.add(1, new ToolTicketItem(null,null,null,null, "loading_ticket",null ));
   myadapter.notifyDataSetChanged();
@@ -234,6 +289,16 @@ private  void  loadUrl(String q,int ToolTypeID,int ToolID,int StratFrom,int EndT
     public void bunhomepage(View view) {
         OldNewsStatus.OnlyOneRequest=true;
         loadUrl("@", 0, 0, 1, 20);
+    }
+
+    public void buMyTool(View view) {
+        Intent myintents = new Intent(getApplicationContext(), MyTool.class);
+        startActivity(myintents);
+    }
+
+    public void buToolType(View view) {
+        Intent myintents = new Intent(getApplicationContext(), Categories.class);
+        startActivity(myintents);
     }
 
     // get news from server
@@ -288,7 +353,8 @@ public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
                     }
                 }
                 else { // no more new data
-                     listnewsData.add(  new ToolTicketItem(null,getResources().getString(R.string.no_search_result),null,null, "No_new_data",null ));
+
+                    listnewsDataTemp.add(  new ToolTicketItem(null,getResources().getString(R.string.no_search_result),null,null, "No_new_data",null ));
 
                 }
 

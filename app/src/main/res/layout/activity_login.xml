@@ -26,8 +26,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/LLogin"
                 android:layout_marginTop="7dp"
-                android:paddingLeft="4dp"
-                android:paddingTop="4dp">
+                android:paddingLeft="20dp"
+                android:paddingTop="4dp"
+                android:paddingRight="20dp">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -37,6 +38,8 @@
                     android:layout_marginBottom="2dp">
 
                     <EditText
+                        android:gravity="center"
+                        android:maxLength="15"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -62,10 +65,11 @@
                     android:layout_marginBottom="2dp">
 
                     <EditText
+                        android:gravity="center"
+                        android:maxLength="15"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:gravity="right"
                         android:id="@+id/EDTpassword"
                         android:layout_weight="1"
                         android:textColor="#ff1a102c"
@@ -83,7 +87,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layoutDirection="rtl"
+                android:textAlignment="center"
+                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -93,7 +98,8 @@
                     android:text="@string/Login"
                     android:id="@+id/bulogin"
                     android:background="@drawable/buttonblue"
-
+                    android:drawableRight="@drawable/newsa"
+                    android:drawablePadding="4dp"
                     android:layout_marginBottom="10dp"
                     android:textColor="#ff06071c"
                     android:onClick="buloginckic"
@@ -101,6 +107,8 @@
                     android:layout_marginLeft="15dp" />
 
                 <Button
+                    android:drawableRight="@drawable/add"
+                    android:drawablePadding="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NewUser"
@@ -111,7 +119,8 @@
                     android:textColor="#ff06071c"
                     android:onClick="burigsterclick"
                     android:layout_weight="0"
-                    android:layout_marginLeft="15dp" />
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp" />
 
             </LinearLayout>
 

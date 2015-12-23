@@ -34,13 +34,27 @@ android:textDirection="rtl"
             android:paddingBottom="4dp">
 
 
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:text="@string/Catgeory"
+                android:id="@+id/button2"
+                android:drawableRight="@drawable/newsa1"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:onClick="buToolType"
+                android:textSize="12dp"
+                android:textColor="@color/darkblue"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:background="@color/whiteback" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="45dp"
-                android:text="@string/mytool"
+                android:text="@string/AddNewTool"
                 android:id="@+id/bulogotype"
-                android:drawableRight="@drawable/add"
+                android:drawableRight="@drawable/add1"
                 android:layout_weight="1"
                 android:drawablePadding="8dp"
                 android:onClick="buAddTool"
@@ -56,7 +70,7 @@ android:textDirection="rtl"
                 android:text="@string/home"
                 android:id="@+id/buhome"
                 android:drawablePadding="8dp"
-                android:drawableRight="@drawable/home"
+                android:drawableRight="@drawable/home1"
                 android:layout_weight="1"
                 android:onClick="bunhomepage"
                 android:textSize="12dp"

@@ -63,7 +63,8 @@
                     android:textSize="16dp"
                     android:textStyle="bold"
                     android:singleLine="false"
-                    android:paddingRight="1dp" />
+                    android:paddingRight="1dp"
+                    android:paddingBottom="3dp" />
 
                 <TextView
 
@@ -85,7 +86,8 @@
                     android:textSize="14dp"
                     android:textColor="@color/black"
                     android:layout_weight="0"
-                    android:paddingTop="5dp" />
+                    android:paddingTop="5dp"
+                    android:textStyle="bold" />
 
                 <ListView
                     android:layout_width="fill_parent"
@@ -94,7 +96,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:paddingEnd="1dp"
+
                     android:gravity="end"
                     android:layout_weight="0"
                     android:background="@color/white"
@@ -127,8 +129,8 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     android:singleLine="false"
-                    android:paddingRight="1dp"
-                    android:layout_marginTop="5dp" />
+                    android:paddingRight="10dp"
+                    android:layout_marginTop="15dp" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -149,15 +151,23 @@
                     android:textSize="12dp"
                     android:textStyle="bold"
                     android:singleLine="false"
-                    android:paddingRight="1dp" />
+                    android:paddingRight="10dp"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/OwnerLives"
+                    android:id="@+id/textView3"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="10dp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:layout_weight="0"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp">
 
