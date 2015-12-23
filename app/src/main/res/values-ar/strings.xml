@@ -26,8 +26,7 @@
     <string name="nonetworkConnection">لايوجد اتصال بالانترنت</string>
     <string name="Emailu"> بريد الالكتروني</string>
     <string name="PhoneNumberu"> رقم الهاتف</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyC-GwnV_JLxYcz2hfbXlqE02naOYr5qNSg</string>
-    <string name="AddNewTool"> إضافة عرض  </string>
+     <string name="AddNewTool"> إضافة عرض  </string>
     <string name="MsgDonothaveOffers">لم يكن لديك عروض لبيع</string>
     <string name="RemoveOffer">ازالة العرض</string>
     <string name="RepeatPassword">اعد ادخال كلمة المرور</string>
@@ -52,5 +51,5 @@
     <string name="OwnerLives">المالك يسكن  ضمن هذه المنطقة</string>
     <string name="AddImagesPlease"> يجب اضافة صورة واحد علئ الاقل</string>
     <string name="Catgeory">الاقسام</string>
-    <string name="Pop_ad_unit_id">ca-app-pub-7315471620590850/7044313722</string>
+   
 </resources>
