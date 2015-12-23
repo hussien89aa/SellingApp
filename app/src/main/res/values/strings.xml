@@ -26,7 +26,7 @@
     <string name="nonetworkConnection"> No internet connection    </string>
     <string name="Emailu">  Email  </string>
     <string name="PhoneNumberu">   Phone number</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">MAP_KEY</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">Google map key</string>
     <string name="AddNewTool">Add Offer</string>
     <string name="MsgDonothaveOffers"> You didnot post any offer</string>
     <string name="RemoveOffer">  Remove Offer</string>
@@ -52,5 +52,5 @@
     <string name="OwnerLives">Tool  Owner is lining in this area </string>
     <string name="AddImagesPlease"> Add one image at least please</string>
     <string name="Catgeory">Departments</string>
-    <string name="Pop_ad_unit_id">Ads KEy</string>
+    <string name="Pop_ad_unit_id">ads key</string>
 </resources>

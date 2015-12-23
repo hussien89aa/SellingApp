@@ -15,7 +15,7 @@ public class SaveSettings {
     SharedPreferences sharedpreferences;
     public static final String MyPREFERENCES = "MyPrefs3" ;
     public static   String UserID = "0";
-    public static String ServerURL="http://sellingportal.alruabye.net/";
+    public static String ServerURL="http://selling.alruabye.net/";
     public static   int  Distance;
     public static String  APPURL="com.selling.hussienalrubaye.androidselling";
     public  SaveSettings(Context context) {

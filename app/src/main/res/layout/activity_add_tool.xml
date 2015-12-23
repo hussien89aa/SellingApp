@@ -37,7 +37,7 @@
                     android:layout_marginBottom="2dp">
 
                     <EditText
-                        android:maxLength="25"
+                        android:maxLength="35"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
