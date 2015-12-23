@@ -31,6 +31,7 @@
 
 
                 <LinearLayout
+                    android:maxLength="25"
                     android:orientation="vertical"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
                     android:layout_marginBottom="2dp">
 
                     <EditText
-                        android:maxLength="15"
+                        android:maxLength="50"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -62,7 +63,7 @@
                     android:layout_marginBottom="2dp">
 
                     <EditText
-                        android:maxLength="15"
+                        android:maxLength="50"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -86,7 +87,7 @@
                     android:layout_marginBottom="2dp">
 
                     <EditText
-                        android:maxLength="15"
+                        android:maxLength="50"
                         android:gravity="right"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -103,7 +104,7 @@
                         android:inputType="textPassword" />
 
                     <EditText
-                        android:maxLength="15"
+                        android:maxLength="50"
                         android:gravity="right"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
