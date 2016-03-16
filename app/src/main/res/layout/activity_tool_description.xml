@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+    tools:context="com.selling.hussienalrubaye.androidselling.ToolDescription">
+    <ScrollView
+        android:background="@color/whitebackground" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layoutDirection="rtl"
+        android:textAlignment="center"
+        android:background="@drawable/background"
+
+        android:paddingRight="5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="price"
+                    android:gravity="left"
+                    android:id="@+id/txt_tool_price"
+                    android:textSize="18dp"
+                    android:textColor="#db1212"
+                    android:textStyle="bold"
+                    android:layout_weight="0" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Tool Name"
+                    android:id="@+id/txt_tool_name"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:background="@color/white"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_toLeftOf="@+id/webView"
+                    android:layout_toRightOf="@+id/bufolowSubscrible"
+                    android:layout_toEndOf="@+id/bufolowSubscrible"
+                    android:layout_weight="0"
+                    android:textColor="#0894f8"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:singleLine="false"
+                    android:paddingRight="1dp"
+                    android:paddingBottom="3dp" />
+
+                <TextView
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="دورة برمجة جافا هذه الدورة تشرح الجافا من الأساسيات الى مرحلة الأحتراف تشرح مختلف مواضيع من البداية الى قواعد البيانات ."
+                    android:id="@+id/txt_tool_desc"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+
+
+                    android:background="@color/white"
+                    android:layout_toLeftOf="@+id/webView"
+                    android:layout_toRightOf="@+id/bufolowSubscrible"
+                    android:layout_toEndOf="@+id/bufolowSubscrible"
+                    android:paddingBottom="5dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="0"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold" />
+
+                <ListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LVImages"
+                    android:layout_weight="1" />
+
+                <TextView
+
+                    android:gravity="end"
+                    android:layout_weight="0"
+                    android:background="@color/white"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="2015-12-11"
+                    android:textSize="10dp"
+
+                    android:id="@+id/txt_tool_date"
+                    android:textStyle="italic" />
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="owner phone"
+                    android:id="@+id/txt_PhoneNumber"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:background="@color/white"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_toLeftOf="@+id/webView"
+                    android:layout_toRightOf="@+id/bufolowSubscrible"
+                    android:layout_toEndOf="@+id/bufolowSubscrible"
+                    android:layout_weight="0"
+                    android:textColor="#0894f8"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:singleLine="false"
+                    android:paddingRight="10dp"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Tool Name"
+                    android:id="@+id/txt_Email"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:background="@color/white"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_toLeftOf="@+id/webView"
+                    android:layout_toRightOf="@+id/bufolowSubscrible"
+                    android:layout_toEndOf="@+id/bufolowSubscrible"
+                    android:layout_weight="0"
+                    android:textColor="#0894f8"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:singleLine="false"
+                    android:paddingRight="10dp"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/OwnerLives"
+                    android:id="@+id/textView3"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="10dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_weight="0"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <fragment
+                        xmlns:map="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                          />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

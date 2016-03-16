@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textDirection="rtl"
+    android:background="@color/whitebackground"
+    tools:context="com.selling.hussienalrubaye.androidselling.AddTool">
+    <ScrollView
+        android:background="@color/whitebackground" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LLogin"
+                android:layout_marginTop="7dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:maxLength="35"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:ems="10"
+                        android:id="@+id/EDTToolName"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/ToolNameHint"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:inputType="textMultiLine"
+                        android:singleLine="false"
+                        android:maxLength="400"
+                        android:maxLines="4"
+                        android:lines="4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="100dp"
+                        android:ems="10"
+                        android:id="@+id/EDToolDes"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/ToolDescHint"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"
+                          />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="right"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:maxLength="15"
+                        android:layout_width="70pt"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/EDTToolPrice"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/ToolPriceHint"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/ToolType"
+                        android:id="@+id/textView"
+                        android:layout_weight="0"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layoutDirection="rtl"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/ClickToAddImages"
+                    android:id="@+id/textView2" />
+
+                <GridView
+                    android:background="@color/whitebackground"
+                    android:horizontalSpacing="5dp"
+                    android:verticalSpacing="5dp"
+                    android:columnWidth="110dp"
+
+                    android:numColumns="auto_fit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gridView" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/AddTool"
+                    android:drawablePadding="2dp"
+                    android:id="@+id/BuSaveSetting"
+                    android:background="@drawable/buttonblue"
+android:drawableRight="@drawable/add"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#ff06071c"
+                    android:onClick="buAddTool"
+                    android:layout_weight="0"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

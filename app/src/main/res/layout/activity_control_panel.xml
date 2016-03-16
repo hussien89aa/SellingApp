@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:textDirection="rtl"
+    tools:context="com.selling.hussienalrubaye.androidselling.ControlPanel">
+
+    <LinearLayout
+        android:textDirection="rtl"
+        android:background="@color/whitebackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:divider="@color/whitebackground"
+
+            android:background="@color/whitebackground"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/LVNews"
+            android:dividerHeight="2dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:background="@color/whiteback"
+            android:layout_weight="0"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:text="@string/Catgeory"
+                android:id="@+id/button2"
+                android:drawableRight="@drawable/newsa1"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:onClick="buToolType"
+                android:textSize="12dp"
+                android:textColor="@color/darkblue"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:background="@color/whiteback" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:text="@string/AddNewTool"
+                android:id="@+id/bulogotype"
+                android:drawableRight="@drawable/add1"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:onClick="buAddTool"
+                android:textSize="12dp"
+                android:textColor="@color/darkblue"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:background="@color/whiteback" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:text="@string/home"
+                android:id="@+id/buhome"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/home1"
+                android:layout_weight="1"
+                android:onClick="bunhomepage"
+                android:textSize="12dp"
+                android:textColor="@color/darkblue"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:background="@color/whiteback" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

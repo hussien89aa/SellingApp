@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name"> افضل العروض </string>
+    <string name="menu">menu</string>
+    <string name="search">search</string>
+    <string name="home">الرئيسية</string>
+    <string name="mytool">عروضي</string>
+    <string name="ToolNameHint">اكتب اسم الاداة</string>
+
+    <string name="ToolPriceHint">ادخل السعر</string>
+
+    <string name="ToolDescHint">اوصف الاداة</string>
+    <string name="ToolType">تصنيف الاداة :</string>
+    <string name="AddTool">اضافة</string>
+    <string name="AddImages">اضف صور</string>
+    <string name="UserName">ادخل اسم مستخدم</string>
+    <string name="AddPassword">ادخل كلمة المرور</string>
+    <string name="Login">تسجيل دخول</string>
+    <string name="NewUser">مستخدم جديد</string>
+    <string name="Email">ادخل بريدك الالكتروني</string>
+    <string name="PhoneNumber">ادخل رقم الهاتف</string>
+    <string name="back">رجوع</string>
+    <string name="AddForsell">اضافة ادوات للبيع</string>
+    <string name="AddNewUser"> اضافة مستخدم جديد</string>
+    <string name="OffersNews">اخر العروض</string>
+    <string name="no_search_result">لايوجد نتائج بحث</string>
+    <string name="nonetworkConnection">لايوجد اتصال بالانترنت</string>
+    <string name="Emailu"> بريد الالكتروني</string>
+    <string name="PhoneNumberu"> رقم الهاتف</string>
+     <string name="AddNewTool"> إضافة عرض  </string>
+    <string name="MsgDonothaveOffers">لم يكن لديك عروض لبيع</string>
+    <string name="RemoveOffer">ازالة العرض</string>
+    <string name="RepeatPassword">اعد ادخال كلمة المرور</string>
+    <string name="alerts">مدى البحث</string>
+    <string name="callus">اتصل بنا</string>
+    <string name="separeteapp">نشر التطبيق</string>
+    <string name="rateapp">قيم التطبيق</string>
+
+    <string name="generldepartment">أقسام عامة</string>
+
+    <string name="action_settings">إعدادات</string>
+    <string name="sharemessage">  برنامج رائع ساعدني في بيع اغراضي المستعملة احب اشاركه معك</string>
+    <string name="GpsDistable">تحديد الموقع غير فعال يجب عليك تشغيله قبل اتمام هذه العملية هل تريد تشغيله الان </string>
+
+    <string name="gpsoff"> تحديد الموقع غير فعال يجب عليك تشغيله قبل اتمام هذه العملية   </string>
+    <string name="offerdetails">تفاصيل العرض</string>
+    <string name="addUser">حفظ المعلومات</string>
+    <string name="AddAllinfo">ادخل جميع المعلومات</string>
+    <string name="PasswordNotCorrect">كلمة المرور غير مطابقة</string>
+    <string name="EmailNotCorrect">البريد الالكتروني غير صحيح</string>
+    <string name="ClickToAddImages">اضغط على صورة لتحمل الصور من هاتفك</string>
+    <string name="OwnerLives">المالك يسكن  ضمن هذه المنطقة</string>
+    <string name="AddImagesPlease"> يجب اضافة صورة واحد علئ الاقل</string>
+    <string name="Catgeory">الاقسام</string>
+
+</resources>

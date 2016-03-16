@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textDirection="rtl"
+    android:background="@color/whitebackground"
+    tools:context="com.selling.hussienalrubaye.androidselling.MainActivity">
+    <ScrollView
+        android:background="@color/whitebackground" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LLogin"
+                android:layout_marginTop="7dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp">
+
+
+                <LinearLayout
+                    android:maxLength="25"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:maxLength="50"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:ems="10"
+                        android:id="@+id/EDTUserName"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/UserName"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:maxLength="50"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/EDemail"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/Email"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp">
+
+                    <EditText
+                        android:maxLength="50"
+                        android:gravity="right"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/EDTpassword"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/AddPassword"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="textPassword" />
+
+                    <EditText
+                        android:maxLength="50"
+                        android:gravity="right"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/EDTpasswordR"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/RepeatPassword"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:touchscreenBlocksFocus="false"
+                    android:layout_marginBottom="2dp" >
+
+                    <EditText
+                        android:maxLength="15"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/EDTPhoneNumber"
+                        android:layout_weight="1"
+                        android:textColor="#ff1a102c"
+                        android:background="@android:drawable/editbox_background"
+                        android:textSize="18dp"
+                        android:hint="@string/PhoneNumber"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="phone" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layoutDirection="rtl"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="15dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/addUser"
+                    android:id="@+id/BuSaveSetting"
+                    android:background="@drawable/buttonblue"
+android:drawableRight="@drawable/add"
+                    android:drawablePadding="4dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#ff06071c"
+                    android:onClick="busaveaccount"
+                    android:layout_weight="0"
+                    android:layout_marginLeft="15dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
